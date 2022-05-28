@@ -1,6 +1,14 @@
-## About
+# Codeserver
 
-This repository is forked from ONLYOFFICE/Docker-CommunityServer, we have the following modifications are provided
+https://hub.docker.com/r/linuxserver/code-server 
 
-* replace README.md
-* add README-zh.md, CHANGELOG.md, Note.md, License.md, docker-compose.yml,.env, src, .github folder
+这个项目考虑非常全面。
+
+## FAQ
+
+#### 终端如何切换到 root 用户？
+```
+$ sudo su
+
+手动输入密码或ctrl+V 拷贝密码
+```

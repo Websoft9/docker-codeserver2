@@ -2,20 +2,24 @@ version: "3.8"
 services:
   code-server:
     image: ghcr.io/linuxserver/code-server:$APP_VERSION
-    container_name: $APP_CONTAINER_NAME
+    container_name: $APP_NAME
     environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=$APP_TIMEZONE
       - PASSWORD=$APP_PASSWORD
       - SUDO_PASSWORD=$APP_PASSWORD
-
+      - PROXY_DOMAIN=$APP_URL
+      - PUID
+      - PGID
+      - TZ
+      - DEFAULT_WORKSPACE
     volumes:
-      - "$VOLUMES_PATH_PREFIX/codeserver/config:/config"
+      - "code:/config"
     ports:
       - $APP_PORT:8443
     restart: always
 
 networks:
   default:
-      name: "$APP_NETWORK"
+      name: "$APP_NAME"
+
+volumes:
+  code:
