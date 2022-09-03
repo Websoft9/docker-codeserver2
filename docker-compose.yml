@@ -14,7 +14,7 @@ services:
     volumes:
       - "code:/config"
     ports:
-      - $APP_PORT:8443
+      - $APP_HTTP_PORT:8443
     restart: always
 
 networks:
